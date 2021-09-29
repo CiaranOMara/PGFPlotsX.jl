@@ -692,7 +692,7 @@ end
 
 A vertical line at `x`.
 """
-VLine(x::Real) = VLine(Options(), x)
+VLine(x) = VLine(Options(), x)
 
 function print_tex(io::IO, vline::VLine)
     @unpack options, x = vline
@@ -711,7 +711,7 @@ end
 
 A horizontal line at `y`.
 """
-HLine(y::Real) = HLine(Options(), y)
+HLine(y) = HLine(Options(), y)
 
 function print_tex(io::IO, hline::HLine)
     @unpack options, y = hline
@@ -735,7 +735,7 @@ end
 
 A vertical band from `xmin` to `xmax`.
 """
-VBand(xmin::Real, xmax::Real) = VBand(Options(), xmin, xmax)
+VBand(args...) = VBand(Options(), args...)
 
 function print_tex(io::IO, vband::VBand)
     @unpack options, xmin, xmax = vband
@@ -755,7 +755,7 @@ end
 
 A horizontal band from `ymin` to `ymax`.
 """
-HBand(ymin::Real, ymax::Real) = HBand(Options(), ymin, ymax)
+HBand(args...) = HBand(Options(), args...)
 
 function print_tex(io::IO, hband::HBand)
     @unpack options, ymin, ymax = hband
