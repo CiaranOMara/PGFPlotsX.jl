@@ -178,6 +178,7 @@ end
     @test repr_tex(@pgf LegendEntry({red}, "a", true)) == "\\addlegendentryexpanded[red] {a}\n"
     l = LegendEntry("a")
     @test repr_tex(l) == "\\addlegendentry {a}\n"
+    @test repr_tex(@pgf LegendImage({"line legend", color="red"})) == "\\addlegendimage{line legend, color={red}}\n"
     # axis
     @test repr_tex(@pgf Axis({ optaxis }, Plot({ optplot }, c), l)) ==
         "\\begin{axis}[optaxis]\n    \\addplot[optplot]\n" *

@@ -86,6 +86,23 @@ julia> print_tex(Legend(["Plot A", "Plot B"]))
 \legend{{Plot A},{Plot B}}
 ```
 
+## LegendImage
+
+```@docs
+LegendImage
+```
+
+A [`LegendImage`](@ref) adds a further legend image for legend creation.
+
+Example:
+
+```jldoctest
+julia> print_tex(@pgf LegendImage({"draw line", color="red"}))
+\addlegendimage{draw line, color={red}}
+```
+
+
+
 ## Horizontal and vertical lines
 
 [`HLine`](@ref) and [`VLine`](@ref) have no equivalent constructs in `pgfplots`, they are provided for convenient drawing of horizontal and vertical lines. When options are used, they are passed to the TikZ function `\draw[...]`.

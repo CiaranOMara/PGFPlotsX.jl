@@ -678,6 +678,29 @@ function print_tex(io::IO, legendentry::LegendEntry)
     println(io, "}")
 end
 
+###############
+# LegendImage #
+###############
+
+struct LegendImage
+    options::Options
+end
+
+"""
+    LegendImage([options::Options])
+
+Corresponds to the `\\addlegendimage{ ... }` in PGFPlots.
+"""
+LegendImage() = LegendImage(Options())
+
+function print_tex(io::IO, legendimage::LegendImage)
+    @unpack options = legendimage
+    print(io, "\\addlegendimage")
+    print(io, "{")
+    print_opt(io, options)
+    println(io, "}")
+end
+
 ###################
 # VLine and HLine #
 ###################
